@@ -1,0 +1,30 @@
+data:
+  n_samples: 10000
+  fault_ratio: 0.15
+  random_seed: 42
+
+models:
+  random_forest:
+    n_estimator: 100
+    max_depth: 10
+  svm:
+    kernel: rbf
+    C: 1.0
+    probability: true
+  meta_learner:
+    solver: lbfgs
+
+simulation:
+  duration_seconds: 60
+  sampling_rate_ms: 100
+  fault_threshold: 0.5
+
+database: 
+  path: "data/digital_shadow.db"
+
+paths: 
+  raw_data: "data/raw/"
+  processed_data: "data/processed/"
+  models_dir: "src/models/saved_models/"
+  figures_dir: "results/figures/"
+  logs_dir: "results/logs/" 
